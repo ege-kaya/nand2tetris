@@ -17,8 +17,8 @@ initial begin
 end
 
 Not U_Not (
-in,
-out
+out,
+in
 );
 
 endmodule

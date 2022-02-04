@@ -4,22 +4,18 @@
 `include "And.v"
 `include "Or.v"
 
-module Xor (
-out,
-a,
-b
-);
+module Xor(out, a, b);
 
-input a;
-input b;
-output out;
+    input a;
+    input b;
+    output out;
 
-wire aNandB;
-wire aOrB;
+    wire aNandB;
+    wire aOrB;
 
-nand(aNandB, a, b);
-Or U_Or(aOrB, a, b);
-And U_And(out, aNandB, aOrB);
+    nand(aNandB, a, b);
+    Or U_Or(aOrB, a, b);
+    And U_And(out, aNandB, aOrB);
 
 endmodule
 

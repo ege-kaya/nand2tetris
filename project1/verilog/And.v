@@ -2,20 +2,16 @@
 `define AND_V
 `include "Not.v"
 
-module And (
-out,
-a,
-b
-);
+module And(out, a, b);
 
-input a;
-input b;
-output out;
+    input a;
+    input b;
+    output out;
+    
+    wire aNandB;
 
-wire aNandB;
-
-nand(aNandB, a, b);
-Not U_Not(out, aNandB);
+    nand(aNandB, a, b);
+    Not U_Not(out, aNandB);
 
 endmodule
 

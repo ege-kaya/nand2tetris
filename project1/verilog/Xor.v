@@ -14,8 +14,8 @@ module Xor(out, a, b);
     wire aOrB;
 
     nand(aNandB, a, b);
-    Or U_Or(aOrB, a, b);
-    And U_And(out, aNandB, aOrB);
+    Or U_Or(.out(aOrB), .a(a), .b(b));
+    And U_And(.out(out), .a(aNandB), .b(aOrB));
 
 endmodule
 

@@ -2,23 +2,20 @@
 
 module Not_tb();
 
-reg in;
-wire out;
+    reg in;
+    wire out;
 
-initial begin
+    initial begin
 
-	$dumpfile("Not_tb.vcd");
-	$dumpvars(0, Not_tb);
-	
-	in = 0;
-	#5 in = 1;
-	#5 $finish;
-	
-end
+        $dumpfile("Not_tb.vcd");
+        $dumpvars(0, Not_tb);
 
-Not U_Not (
-out,
-in
-);
+        in = 0;
+        #5 in = 1;
+        #5 $finish;
+
+    end
+
+    Not U_Not (.out(out), .in(in));
 
 endmodule

@@ -2,23 +2,23 @@
 
 module Xor_tb();
 
-reg a;
-reg b;
-wire out;
+    reg a;
+    reg b;
+    wire out;
 
-initial begin
+    initial begin
 
-    $dumpfile("Xor_tb.vcd");
-    $dumpvars(0, Xor_tb);
+        $dumpfile("Xor_tb.vcd");
+        $dumpvars(0, Xor_tb);
 
-    a = 0; b = 0;
-    #5 a = 1; b = 0;
-    #5 a = 0; b = 1;
-    #5 a = 1; b = 1;
-    #5 $finish;
+        a = 0; b = 0;
+        #5 a = 1; b = 0;
+        #5 a = 0; b = 1;
+        #5 a = 1; b = 1;
+        #5 $finish;
 
-end
+    end
 
-Xor U_Xor(out, a, b);
+    Xor U_Xor(.out(out), .a(a), .b(b));
 
 endmodule

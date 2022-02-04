@@ -2,23 +2,23 @@
 
 module And_tb();
 
-reg a;
-reg b;
-wire out;
+    reg a;
+    reg b;
+    wire out;
 
-initial begin
+    initial begin
 
-    $dumpfile("And_tb.vcd");
-    $dumpvars(0, And_tb);
+        $dumpfile("And_tb.vcd");
+        $dumpvars(0, And_tb);
 
-    a = 0; b = 0;
-    #5 a = 1; b = 0;
-    #5 a = 0; b = 1;
-    #5 a = 1; b = 1;
-    #5 $finish;
+        a = 0; b = 0;
+        #5 a = 1; b = 0;
+        #5 a = 0; b = 1;
+        #5 a = 1; b = 1;
+        #5 $finish;
 
-end
+    end
 
-And U_And(out, a, b);
+    And U_And(.out(out), .a(a), .b(b));
 
 endmodule
